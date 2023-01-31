@@ -107,6 +107,7 @@
 }
 
 .avatar.chatgpt{
+  display: flex;
   background: #0da37f;
   border-radius: 50%;
   width: 40px;
