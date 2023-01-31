@@ -12,7 +12,7 @@ function App() {
 
   const [input, setInput] = useState("");
   const [models, setModels] = useState([]);
-  const [currentmodel, setCurrentModel] = useState("ada");
+  const [currentModel, setCurrentModel] = useState("ada");
   const [chatLog, setChatLog] = useState([
     {
       user: "gpt",
@@ -52,7 +52,7 @@ function App() {
       body: JSON.stringify({
         //message: input,
         message: messages,
-        currentmodel,
+        currentModel,
       }),
     });
 
@@ -98,11 +98,12 @@ function App() {
               setCurrentModel(e.target.value);
             }}
           >
-            {models.map((model, index) => (
-              <option key={model.id} value={model.id}>
-                {model.id}
-              </option>
-            ))}
+            {models &&
+              models.map((model, index) => (
+                <option key={model.id} value={model.id}>
+                  {model.id}
+                </option>
+              ))}
           </select>
         </div>
       </aside>
